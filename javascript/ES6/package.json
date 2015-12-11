@@ -1,0 +1,28 @@
+{
+  "name": "fizz-buzz",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dist": "mkdir -p ./dist",
+    "prebuild-js": "npm run dist",
+    "build-js": "browserify src/*.js -o ./dist/main.js -v -d -t [ babelify --presets [ es2015 ] ]",
+    "build-test": "browserify spec/*.js -o ./dist/tests.js -v -d -t [ babelify --presets [ es2015 ] ]",
+    "pretest": "npm run build-js & npm run build-test",
+    "test": "karma start --single-run",
+    "tdd": "watchify src/*.js -o ./dist/main.js -v -d -t [ babelify --presets [ es2015 ] ] & watchify spec/*.js -o ./dist/tests.js -v -d -t [ babelify --presets [ es2015 ] ] & karma start"
+  },
+  "author": "rb-coder",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.19",
+    "watchify": "^3.6.1"
+  }
+}
