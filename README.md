@@ -1,5 +1,7 @@
 # fizz-buzz
-FizzBuzz implementation in multiple languages
+FizzBuzz implementation in multiple languages / frameworks
 
-#Current Languages:
+#Current Languages/Frameworks:
  * ES6
+ * Cycle.js
+ * RxJS
